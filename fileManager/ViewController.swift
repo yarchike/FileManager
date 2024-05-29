@@ -12,6 +12,7 @@ class ViewController: UIViewController{
     var content: Content = Content(path: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
     
     var fileManager: FileManagerServiceProtocol = FileManagerService()
+
     
     private lazy var tableView = UITableView(frame: .zero, style: .plain)
 
@@ -89,16 +90,44 @@ class ViewController: UIViewController{
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileManager.contentsOfDirectory(path: content.path).count
+        return fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var config = UIListContentConfiguration.cell()
-        config.text = fileManager.contentsOfDirectory(path: content.path)[indexPath.row]
+        let isFolder = fileManager.isPatchForItemIsFolder(path: content.path, name: fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row])
+        config.text = fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row]
+        if(!isFolder && !Settings.shared.viewPhotoSize){
+            config.secondaryText = "size: \(fileSize(atPath: content.path + "/" + fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row])) kb"
+        }
         cell.contentConfiguration = config
-        cell.accessoryType = fileManager.isPatchForItemIsFolder(path: content.path, name: fileManager.contentsOfDirectory(path: content.path)[indexPath.row]) ? .disclosureIndicator : .none
+    
+        cell.accessoryType = isFolder ? .disclosureIndicator : .none
+ 
         return cell
+    }
+    
+    
+    private func fileSize(atPath path: String) -> Int64 {
+        let fileManager = FileManager.default
+        do {
+            let attributes = try fileManager.attributesOfItem(atPath: path)
+            if let fileSize = attributes[FileAttributeKey.size] as? Int64 {
+                return fileSize
+            } else {
+                print("Unable to get file size")
+                return -1
+            }
+        } catch {
+            print("Error: \(error)")
+            return -1
+        }
+    }
+    
+    
+    func updateTable(){
+        tableView.reloadData()
     }
     
     
@@ -111,15 +140,15 @@ extension ViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            fileManager.removeContent(path: content.path, nameDeleteItem: fileManager.contentsOfDirectory(path: content.path)[indexPath.row])
+            fileManager.removeContent(path: content.path, nameDeleteItem: fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if fileManager.isPatchForItemIsFolder(path: content.path, name: fileManager.contentsOfDirectory(path: content.path)[indexPath.row]) {
-            let vc = ViewController()
-            vc.content = Content(path: content.path + "/" + fileManager.contentsOfDirectory(path: content.path)[indexPath.row])
-            navigationController?.pushViewController(vc, animated: true)
+        if fileManager.isPatchForItemIsFolder(path: content.path, name: fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row]) {
+            let viewController = ViewController()
+            viewController.content = Content(path: content.path + "/" + fileManager.contentsOfDirectory(path: content.path, isSorted: !Settings.shared.alphabetOrder)[indexPath.row])
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }

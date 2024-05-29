@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        let appCoordinator = AppCoordinator(windows: window)
+        window.rootViewController = appCoordinator.rootViewCOntroller
         window.makeKeyAndVisible()
         self.window = window
     }
