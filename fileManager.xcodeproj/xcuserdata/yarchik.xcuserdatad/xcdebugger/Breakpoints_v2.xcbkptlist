@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "26718650-B770-4FB9-B7CF-797C24F2C6EF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fileManager/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - b140081908ab7a8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; fileManager.LoginViewController"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - b83a63fb3b0ca1fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; fileManager.LoginViewController"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - c562627abb7c3298"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.__deallocating_deinit"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - b83a63fb3b0ca156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; fileManager.LoginViewController"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - a55f25a84619ea71"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;fileManager.LoginViewController&gt;"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "4A82A883-CDCC-4CA4-99EC-7AD1322E0159 - 549b7dd6a81a7351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fileManager.LoginViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;fileManager.LoginViewController&gt;"
+                  moduleName = "fileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarchik/Documents/fileManager/fileManager/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

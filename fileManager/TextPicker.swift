@@ -25,4 +25,13 @@ final class TextPicker {
         alert.addAction(alerCancelAction)
         viewController.present(alert, animated: true)
     }
+    
+    static func showMessage(in viewController: UIViewController, title: String, message: String, complition: @escaping (() -> Void)){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alerOkAction = UIAlertAction(title: "Ok", style: .default){_ in 
+            complition()
+        }
+        alert.addAction(alerOkAction)
+        viewController.present(alert, animated: true)
+    }
 }
